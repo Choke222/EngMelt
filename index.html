@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>EngMelt</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+    <h3>EngMelt 1.1</h3>
+    英文を貼り付けると、自動で読みやすく整形します。
+    <form name="eng_input_js">
+        <p class="text_input">入力文：</p>
+        <textarea name="txta" placeholder="英文を入力"></textarea><br>
+        <input type="button" value="整形" onclick="tbox1()">
+        <input type="button" value="消去" onclick="clr1()"><br>
+    </form>
+    <br>
+    <form name="eng_output_js">
+        <p class="text_output">出力文：</p>
+        <textarea name="txtb" placeholder="整形結果"></textarea><br>
+        <input type="button" value="消去" onclick="clr2()"><br>
+    </form>
+    <script>
+        //テキストボックスの文字を取得する
+        function tbox1() {
+            var str1 = document.eng_input_js.txta.value;
+            if (str1 == "") { //空文字列の時
+                alert("入力フォームに英文を入力してください");
+            } else { //整形処理(gフラグ:条件に当てはまる文字列全てに適応する(通常は1回だけ))
+                var str2 = str1.replace(/\r?\n+/g, " ");
+                var str2 = str2.replace(/\.\D/g, ".\n\n"); // new line after "." except that the number.
+                var str2 = str2.replace(/\.\n\n /g, ".\n\n");
+                var str2 = str2.replace(/ al\.\n\n/g, " al\. "); // et al.
+                var str2 = str2.replace(/Fig\.\n\n/g, "Fig\. "); // Fig. [num]
+                var str2 = str2.replace(/e\.\n\ng\.\n\n/g, "e.g."); // e.g.
+                //整形結果をテキストボックスに表示
+                document.eng_output_js.txtb.value = str2;
+            }
+        }
+        //テキストボックス(入力)の文字を削除
+        function clr1() {
+            document.eng_input_js.txta.value = "";
+        }
+        //テキストボックス(出力)の文字を削除
+        function clr2() {
+            document.eng_output_js.txtb.value = "";
+        }
+    </script>
+</body>
+
+</html>

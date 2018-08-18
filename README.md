@@ -4,7 +4,7 @@
 
 実際の処理が含まれているhtmlファイル
 
-- style.css
+- css/style.css
 
 スタイルファイル
 

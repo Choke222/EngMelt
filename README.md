@@ -1,6 +1,6 @@
 # 英語論文を読みやすくするための自動改行ツール
 
-[EngMelt](http://yabapan.net/)
+[EngMelt](http://engmelt.work/)
 
 - index.html
 

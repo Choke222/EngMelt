@@ -35,7 +35,8 @@
                 var str2 = str2.replace(/\.\n\n /g, ".\n\n");
                 var str2 = str2.replace(/ al\.\n\n/g, " al\. "); // et al.
                 var str2 = str2.replace(/Fig\.\n\n/g, "Fig\. "); // Fig. [num]
-                var str2 = str2.replace(/e\.\n\ng\.\n\n/g, "e.g."); // e.g.
+                var str2 = str2.replace(/e\.\n\n\.\n\n+/g, "e.g., "); // e.g.,
+                var str2 = str2.replace(/i\.\n\n\.\n\n+/g, "i.e., "); // i.e.,
                 //整形結果をテキストボックスに表示
                 document.eng_output_js.txtb.value = str2;
             }

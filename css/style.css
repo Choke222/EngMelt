@@ -1,0 +1,12 @@
+.text_input{
+    margin: 0px;
+}
+.text_output{
+    margin: 0px;
+}
+
+textarea{
+    width:95vw;
+    height:35vh;
+    resize:vertical;
+}

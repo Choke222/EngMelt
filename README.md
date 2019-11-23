@@ -1,6 +1,6 @@
 # 英語論文を読みやすくするための自動改行ツール
 
-[EngMelt](http://engmelt.work/)
+[EngMelt](https://choke222.github.io/EngMelt/)
 
 - index.html
 
